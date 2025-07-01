@@ -46,7 +46,6 @@ const Weather = () => {
           icon:icon,
   
         });
-        // console.log();
     }
        
       catch (error) {
