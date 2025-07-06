@@ -6,6 +6,10 @@ import Cart from './Pages/Cart.jsx'
 import LoginSignUp from './Pages/LoginSignUp.jsx'
 import Product from './Pages/Product.jsx'
 import ShopCategory from './Pages/ShopCategory.jsx'
+import men_banner from './Assets/banner_mens.png'
+import women_banner from './Assets/banner_women.png'
+import kid_banner from './Assets/banner_kids.png'
+import Footer from './Components/Footer/Footer.jsx'
 
 const App = () => {
   return (
@@ -14,14 +18,16 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path='/' element={<Shop/>}></Route>
-            <Route path='/kids' element={<ShopCategory category="kids"/>}></Route>
-            <Route path='/mens' element={<ShopCategory category="mens"/>}></Route>
-            <Route path='/womens' element={<ShopCategory category="womens"/>}></Route>
-            <Route path='/loginSignUp' element={<LoginSignUp/>}></Route>
+            <Route path='/kids' element={<ShopCategory banner={kid_banner} category="kid"/>}></Route>
+            <Route path='/mens' element={<ShopCategory banner={men_banner} category="men"/>}></Route>
+            <Route path='/womens' element={<ShopCategory banner={women_banner} category="women"/>}></Route>
+            <Route path='/login' element={<LoginSignUp/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
-            <Route path='/product/:productId' element={<Product />} />
+            <Route path='/product/:productId' element={<Product/>}/>
 
           </Routes>
+          <Footer/>
+
       </BrowserRouter>
     </div>
   )

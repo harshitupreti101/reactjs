@@ -1,5 +1,5 @@
 .item {
-    /* width:350px; */
+    width:265px;
     cursor: pointer;
 }
 .item p {
@@ -25,5 +25,5 @@
     transition:0.6s;
 }
 .item img {
-    width:95%;
+    width:110%;
 }

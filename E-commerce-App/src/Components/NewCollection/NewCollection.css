@@ -1,24 +1,28 @@
-.popular {
+.new-collections {
     display: flex;
     flex-direction: column;
     gap:10px;
     align-items: center;
-    height:90vh;
-    padding:0px 200px 0px 200px;
+    min-height:90vh;
+    /* padding:0px 200px 0px 200px; */
+    margin-bottom: 100px;
 }
-.popular h1 {
+.new-collections h1 {
     color:#171717;
     font-weight:600;
     font-size:50px
 }
-.popular hr {
+.new-collections hr {
     background-color:#252525;
     border-radius:10px;
     width:200px;
     height:6px;
 }
-.popular-item {
-    margin-top:50px;
+.collections {
     display: flex;
     gap:60px;
+    justify-content: center;
+    margin:50px 100px;
+    flex-wrap: wrap;
+    padding-right: 40px;
 }

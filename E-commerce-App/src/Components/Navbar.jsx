@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import './Navbar.css'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../Context/ShopContext'
+
 
 const Navbar = () => {
+    const {getTotalItems} = useContext(ShopContext);
     const [underline,setUnderline] = useState("");
     const underlineHandler = (val) => {
         setUnderline(val);
@@ -23,9 +26,9 @@ const Navbar = () => {
             <li onClick={() => {underlineHandler("Kids")}}><Link to='/kids' style={{textDecoration:'none', color:'#626262'}}>Kids</Link>  {underline === "Kids" ? <hr/> : <></> }</li>
         </ul>
         <div className="nav-login-cart">
-            <button><Link to='/loginSignUp' style={{textDecoration:'none', color:'#626262'}}>Login</Link> </button>
+            <button><Link to='/login' style={{textDecoration:'none', color:'#626262'}}>Login</Link> </button>
             <Link to='/cart' style={{textDecoration:'none', color:'#626262'}}> <img src={cart_icon} alt="" /></Link>
-            <div className="nav-cart-count">0</div>
+            <div className="nav-cart-count">{getTotalItems()}</div>
         </div>
     </div>
   )
